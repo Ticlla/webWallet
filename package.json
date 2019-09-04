@@ -1,0 +1,25 @@
+{
+  "name": "webwallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ticlla/webWallet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ticlla/webWallet/issues"
+  },
+  "homepage": "https://github.com/Ticlla/webWallet#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
