@@ -39,7 +39,7 @@ app.put('/takeBalance/:balance', function(req, res){
 
 
 app.get('/', function(req, res) {
-  res.send('Hola Mundo!');
+  res.send('<h1>Hola Mundo!</h1>');
 });
 
 
