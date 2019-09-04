@@ -13,13 +13,30 @@ app.get('/getBalance', function(req, res) {
 });
 
 app.get('/initiate/:balance', function(req, res) {
-  wallet_test.setBalance(req.params.balance)
+  wallet_test.setBalance(parseInt(req.params.balance));
   response = {
     balance : wallet_test.getBalance()
   }
   res.end(JSON.stringify(response));
 
 });
+
+app.put('/addBalance/:balance', function(req, res){
+  wallet_test.addBalance(parseInt(req.params.balance));
+  response = {
+    balance : wallet_test.getBalance()
+  }
+  res.end(JSON.stringify(response));
+});
+
+app.put('/takeBalance/:balance', function(req, res){
+  wallet_test.takeBalance(parseInt(req.params.balance));
+  response = {
+    balance : wallet_test.getBalance()
+  }
+  res.end(JSON.stringify(response));
+});
+
 
 app.get('/', function(req, res) {
   res.send('Hola Mundo!');

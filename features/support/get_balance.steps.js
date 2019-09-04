@@ -15,9 +15,10 @@ Given('Request is prepared with {string} to {string}',function(type, resourse){
         method: type,
         uri: 'http://localhost:3000/' + resourse,
         json: true,
-        resolveWithFullResponse: true
+        resolveWithFullResponse: true,
+        body:{}
     }
-    console.log(httpOptions)
+    // console.log(httpOptions)
 });
 
 
@@ -29,6 +30,9 @@ When('request is performed',  async function(){
     .catch(function(error) {
         walletResponse = error;
     });
+
+    // console.log(walletResponse.body);
+
 });
 
 Then('I receive response http with {int}', function (httpStatus) {
