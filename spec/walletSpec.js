@@ -45,20 +45,19 @@ describe("Wallet", function() {
   });
 
   it("Should take money from Balance when 0 in place", function() {
+    pending('pending to find how to assert Exception')
       wallet_test = new wallet();
       expectedBalance = 0;
       expect(wallet_test.getBalance()).toBe(expectedBalance);
 
       expectedBalance2 = 0;
       takeBalance = 100;
-      wallet_test.takeBalance(takeBalance);
-      expect(wallet_test.getBalance()).toBe(expectedBalance2);
+      expect(wallet_test.takeBalance(takeBalance)).toThrow(new Error("Not enough Balance"));
+
+      
 
   });
 
-  it("Should take money from Balance when not enough ", function() {
-        pending("Not Yet Implemented")
-
-  });
+ 
 
 });
