@@ -43,7 +43,9 @@ app.get('/', function(req, res) {
   res.render('index',{balance: wallet_test.getBalance(),error: null});
 });
 
-
+app.post('/add', function(req,res){
+  console.log('POST Done---------------')
+});
 
 app.listen(3000, function() {
   console.log('Aplicación ejemplo, escuchando el puerto 3000!');
