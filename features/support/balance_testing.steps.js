@@ -13,12 +13,12 @@ let walletResponse = undefined;
 Given('Request is prepared with {string} to {string}',function(type, resourse){
     httpOptions = {
         method: type,
-        uri: 'http://localhost:3000/' + resourse,
+        uri: 'http://localhost:3000' + resourse,
         json: true,
         resolveWithFullResponse: true,
         body:{}
     }
-    // console.log(httpOptions)
+    //  console.log(httpOptions)
 });
 
 

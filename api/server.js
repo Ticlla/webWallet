@@ -3,6 +3,7 @@ var app = express();
 var wallet = require('../src/wallet.js');
 var wallet_test = new wallet();
 
+app.set('view engine', 'ejs');
 
 app.get('/getBalance', function(req, res) {
   response = {
@@ -39,7 +40,7 @@ app.put('/takeBalance/:balance', function(req, res){
 
 
 app.get('/', function(req, res) {
-  res.send('<h1>Hola Mundo!</h1>');
+  res.render('index',{balance: wallet_test.getBalance(),error: null});
 });
 
 

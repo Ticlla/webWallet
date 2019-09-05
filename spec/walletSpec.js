@@ -53,11 +53,5 @@ describe("Wallet", function() {
       expectedBalance2 = 0;
       takeBalance = 100;
       expect(wallet_test.takeBalance(takeBalance)).toThrow(new Error("Not enough Balance"));
-
-      
-
   });
-
- 
-
 });
