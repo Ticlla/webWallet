@@ -18,7 +18,7 @@ class wallet{
 
 	takeBalance(takeBalance){
 	  if (this.balance - takeBalance >= 0 ){
-	  	this.balance -= takeBalance;	
+	  		this.balance -= takeBalance;	
 	  }else{
 		throw new Error("Not enough Balance");
 	  }

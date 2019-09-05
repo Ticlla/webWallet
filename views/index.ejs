@@ -11,20 +11,20 @@
   <body>
     <div class="container">
         <% if(balance !== null){ %>
-          <h1>Balance: <%= balance %></h1>
+          <h1 id='Balance'>Balance: <%= balance %></h1>
         <% } %>
 
       <fieldset>
-        <h4>Add Balance</h4>
+        <h4>Take Balance</h4>
         <form action="/take" method="post">
-          <input name="balance-amount1" type="text" class="ghost-input" placeholder="Balance to take" required>
+          <input name="balance_to_take" type="text" class="ghost-input" placeholder="Balance to take" required>
           <input type="submit" class="ghost-button" value="Take From Balance">
         </form>
 
-        <h4>Take  Balance</h4>
+        <h4>Add Balance</h4>
         <form action="/add" method="post">
-          <input name="balance-amount2" type="text" class="ghost-input" placeholder="Balance to take" required>
-          <input type="submit" class="ghost-button" value="Add to Balance">
+          <input id = "balanceToAdd" name="balance_to_add" type="text" class="ghost-input" placeholder="Balance to add" required>
+          <input id = "addButton" type="submit" class="ghost-button" value="Add to Balance">
         </form>
       </fieldset>
     </div>

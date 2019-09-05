@@ -3,9 +3,6 @@ const { Given, When,Then } = require('cucumber')
 const { expect } = require('chai')
 const httpClient = require('request-promise')
 
-var wallet = require('../../src/wallet.js');
-var wallet_test = new wallet();
-
 let httpOptions = {};
 let walletResponse = undefined;
 
@@ -30,8 +27,6 @@ When('request is performed',  async function(){
     .catch(function(error) {
         walletResponse = error;
     });
-
-    // console.log(walletResponse.body);
 
 });
 
