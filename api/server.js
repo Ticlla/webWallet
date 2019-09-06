@@ -44,11 +44,11 @@ app.put('/takeBalance/:balance', function(req, res){
 
 
 app.get('/', function(req, res) {
-  res.render('index',{balance: wallet_test.getBalance(),error: null});
+  res.render('index',{balance: wallet_test.getBalance(),error: null, success:null});
 });
 
 app.post('/add', async function(req,res){
-  balance = parseInt(req.body.balance_to_add);
+  balance = parseFloat(req.body.balance_to_add);
   httpOptions = {
     method: 'PUT',
     uri: 'http://localhost:3000/addBalance/' + balance,
@@ -64,11 +64,11 @@ app.post('/add', async function(req,res){
       walletResponse = error;
   });
 
-  res.render('index',{balance: walletResponse.body.balance,error: null});
+  res.render('index',{balance: walletResponse.body.balance,error: null,success:'Has been added to balance', added:balance});
 });
 
 app.post('/take',async function(req,res){
-  balance = parseInt(req.body.balance_to_take);
+  balance = parseFloat(req.body.balance_to_take);
   httpOptions = {
     method: 'PUT',
     uri: 'http://localhost:3000/takeBalance/' + balance,
@@ -84,7 +84,7 @@ app.post('/take',async function(req,res){
       walletResponse = error;
   });
 
-  res.render('index',{balance: walletResponse.body.balance,error: null});
+  res.render('index',{balance: walletResponse.body.balance,error: null,success:null,taken:balance});
 });
 
 
